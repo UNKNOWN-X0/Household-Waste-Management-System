@@ -1,0 +1,371 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.page{padding:1rem 0 2rem}
+.tabs{display:flex;gap:2px;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:1.5rem;flex-wrap:wrap}
+.tab{padding:8px 13px;font-size:13px;cursor:pointer;border:none;background:none;color:var(--color-text-secondary);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab.active{color:var(--color-text-primary);border-bottom-color:var(--color-text-primary);font-weight:500}
+.panel{display:none}.panel.active{display:block}
+h3{font-size:15px;font-weight:500;margin-bottom:10px;color:var(--color-text-primary)}
+.bin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.bin-card{border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);padding:12px}
+.bin-swatch{width:44px;height:56px;border-radius:6px 6px 10px 10px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;position:relative}
+.bin-swatch-lid{position:absolute;top:-6px;left:-4px;right:-4px;height:9px;border-radius:4px 4px 0 0}
+.bin-name{font-size:13px;font-weight:500;text-align:center;margin-bottom:2px}
+.bin-thai{font-size:11px;color:var(--color-text-secondary);text-align:center;margin-bottom:6px}
+.bag-pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:3px 8px;border-radius:20px;border:0.5px solid var(--color-border-tertiary);margin:0 auto 8px;width:fit-content;display:flex}
+.items{font-size:11px;color:var(--color-text-secondary);line-height:1.75}
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:1.25rem 0}
+.note{font-size:12px;color:var(--color-text-secondary);background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px;margin-top:10px;line-height:1.6}
+.table-card{border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);overflow:hidden}
+.trow{display:flex;align-items:center;padding:9px 14px;border-bottom:0.5px solid var(--color-border-tertiary);font-size:13px;gap:10px}
+.trow:last-child{border-bottom:none}
+.trow-label{flex:1;color:var(--color-text-primary)}
+.trow-sub{font-size:11px;color:var(--color-text-secondary);margin-top:1px}
+.badge{font-size:11px;font-weight:500;padding:3px 10px;border-radius:var(--border-radius-md);white-space:nowrap}
+.badge-warn{background:var(--color-background-warning);color:var(--color-text-warning)}
+.badge-danger{background:var(--color-background-danger);color:var(--color-text-danger)}
+.badge-success{background:var(--color-background-success);color:var(--color-text-success)}
+.badge-info{background:var(--color-background-info);color:var(--color-text-info)}
+.badge-neutral{background:var(--color-background-secondary);color:var(--color-text-secondary)}
+.tip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.tip-card{border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary);padding:12px 14px}
+.tip-title{font-size:13px;font-weight:500;margin-bottom:4px;display:flex;align-items:center;gap:6px;color:var(--color-text-primary)}
+.tip-body{font-size:12px;color:var(--color-text-secondary);line-height:1.6}
+.week-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.week-card{border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);padding:12px}
+.week-num{font-size:11px;color:var(--color-text-secondary);margin-bottom:4px}
+.week-title{font-size:13px;font-weight:500;margin-bottom:8px;color:var(--color-text-primary)}
+.week-items{font-size:11px;color:var(--color-text-secondary);line-height:1.8}
+.label-block{border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);padding:14px 16px;font-size:12px;line-height:2}
+.label-row{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.label-row:last-child{border-bottom:none}
+.lcolor{width:12px;height:12px;border-radius:50%;flex-shrink:0;margin-top:2px}
+.ltitle{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:1px}
+.lbody{font-size:11px;color:var(--color-text-secondary);line-height:1.6}
+</style>
+
+<div class="page">
+<div class="tabs">
+  <button class="tab active" onclick="showTab('bins')">5 Streams</button>
+  <button class="tab" onclick="showTab('organic')">Organic / Bokashi</button>
+  <button class="tab" onclick="showTab('outbound')">Outbound flow</button>
+  <button class="tab" onclick="showTab('penalty')">Penalty & reward</button>
+  <button class="tab" onclick="showTab('roadmap')">4-week plan</button>
+  <button class="tab" onclick="showTab('labels')">Thai labels</button>
+</div>
+
+<div id="panel-bins" class="panel active">
+  <div class="bin-grid">
+    <div class="bin-card">
+      <div class="bin-swatch" style="background:#3B6D11;">
+        <div class="bin-swatch-lid" style="background:#27500A;"></div>
+        <i class="ti ti-leaf" style="font-size:18px;color:#C0DD97;" aria-hidden="true"></i>
+      </div>
+      <div class="bin-name">Organic</div>
+      <div class="bin-thai">ขยะเปียก · Bioabfall</div>
+      <div class="bag-pill"><span style="width:9px;height:9px;border-radius:50%;background:#3B6D11;flex-shrink:0;"></span><span>Green biodegradable bag</span></div>
+      <div class="items">
+        ✓ Fruit/veg peels, cores<br>
+        ✓ Eggshells, coffee grounds<br>
+        ✓ Plain rice, noodles, bread<br>
+        ✓ Leaves, garden trimmings<br>
+        ✗ Oily curries, sauces<br>
+        ✗ Meat, fish, bones<br>
+        ✗ Dairy, cooking oil
+      </div>
+    </div>
+    <div class="bin-card">
+      <div class="bin-swatch" style="background:#BA7517;">
+        <div class="bin-swatch-lid" style="background:#854F0B;"></div>
+        <i class="ti ti-file" style="font-size:18px;color:#FAEEDA;" aria-hidden="true"></i>
+      </div>
+      <div class="bin-name">Paper</div>
+      <div class="bin-thai">กระดาษ · Papier</div>
+      <div class="bag-pill"><span style="width:9px;height:9px;border-radius:50%;background:#BA7517;flex-shrink:0;"></span><span>No bag — tie with string</span></div>
+      <div class="items">
+        ✓ Newspapers, magazines<br>
+        ✓ Office paper, envelopes<br>
+        ✓ Cardboard (flattened)<br>
+        ✓ Paper bags, egg cartons<br>
+        ✗ Waxed / laminated paper<br>
+        ✗ Greasy / wet paper<br>
+        ✗ Coffee cups (plastic-lined)
+      </div>
+    </div>
+    <div class="bin-card">
+      <div class="bin-swatch" style="background:#854F0B;">
+        <div class="bin-swatch-lid" style="background:#633806;"></div>
+        <i class="ti ti-recycle" style="font-size:18px;color:#FAEEDA;" aria-hidden="true"></i>
+      </div>
+      <div class="bin-name">Recyclables</div>
+      <div class="bin-thai">ขยะรีไซเคิล · Wertstoff</div>
+      <div class="bag-pill"><span style="width:9px;height:9px;border-radius:50%;background:#EF9F27;flex-shrink:0;"></span><span>Yellow translucent bag</span></div>
+      <div class="items">
+        ✓ PET/HDPE bottles (crushed)<br>
+        ✓ Aluminium cans, tins<br>
+        ✓ Glass bottles (rinsed)<br>
+        ✓ UHT cartons (rinsed)<br>
+        ✓ Clean plastic #1 #2 #5<br>
+        ✗ Styrofoam / foam trays<br>
+        ✗ Chip bags, sachets<br>
+        ✗ Dirty/oily containers
+      </div>
+    </div>
+    <div class="bin-card">
+      <div class="bin-swatch" style="background:#185FA5;">
+        <div class="bin-swatch-lid" style="background:#0C447C;"></div>
+        <i class="ti ti-trash" style="font-size:18px;color:#E6F1FB;" aria-hidden="true"></i>
+      </div>
+      <div class="bin-name">Residual</div>
+      <div class="bin-thai">ขยะทั่วไป · Restmüll</div>
+      <div class="bag-pill"><span style="width:9px;height:9px;border-radius:50%;background:#185FA5;flex-shrink:0;"></span><span>Blue opaque bag</span></div>
+      <div class="items">
+        ✓ Tissues, wet wipes<br>
+        ✓ Diapers, sanitary pads<br>
+        ✓ Styrofoam, foam<br>
+        ✓ Broken ceramics, Pyrex<br>
+        ✓ Chip bags, candy wrappers<br>
+        ✓ Toothbrush, razor<br>
+        ✓ Cat litter, vacuum dust
+      </div>
+    </div>
+    <div class="bin-card">
+      <div class="bin-swatch" style="background:#A32D2D;">
+        <div class="bin-swatch-lid" style="background:#791F1F;"></div>
+        <i class="ti ti-alert-triangle" style="font-size:18px;color:#FCEBEB;" aria-hidden="true"></i>
+      </div>
+      <div class="bin-name">Hazardous</div>
+      <div class="bin-thai">ขยะอันตราย · Sondermüll</div>
+      <div class="bag-pill"><span style="width:9px;height:9px;border-radius:50%;background:#A32D2D;flex-shrink:0;"></span><span>Red sealed bag/box</span></div>
+      <div class="items">
+        ✓ Batteries (tape terminals)<br>
+        ✓ CFL/LED bulbs, tubes<br>
+        ✓ Expired medicines<br>
+        ✓ Paint, solvents, pesticide<br>
+        ✓ Cooking oil (separate)<br>
+        → Drop-off: Big C, HomePro<br>
+        → อบต. hazardous day
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>Bin sizes & placement</h3>
+  <div class="table-card" style="margin-top:8px;">
+    <div class="trow"><i class="ti ti-leaf" style="font-size:16px;color:#3B6D11;" aria-hidden="true"></i><div class="trow-label"><div>Organic — kitchen, under sink, lidded</div><div class="trow-sub">Empty daily into Bokashi or outdoor compost</div></div><div class="badge badge-neutral">15–20 L</div></div>
+    <div class="trow"><i class="ti ti-file" style="font-size:16px;color:#BA7517;" aria-hidden="true"></i><div class="trow-label"><div>Paper — dry area, study or dining room</div><div class="trow-sub">Open basket or cardboard box, keep away from kitchen splash</div></div><div class="badge badge-neutral">25–30 L</div></div>
+    <div class="trow"><i class="ti ti-recycle" style="font-size:16px;color:#854F0B;" aria-hidden="true"></i><div class="trow-label"><div>Recyclables — kitchen or balcony</div><div class="trow-sub">Tall narrow bin; rinse before adding</div></div><div class="badge badge-neutral">40–60 L</div></div>
+    <div class="trow"><i class="ti ti-trash" style="font-size:16px;color:#185FA5;" aria-hidden="true"></i><div class="trow-label"><div>Residual — kitchen, beside organic</div><div class="trow-sub">Heavy-duty liner, sealed lid</div></div><div class="badge badge-neutral">30–40 L</div></div>
+    <div class="trow"><i class="ti ti-alert-triangle" style="font-size:16px;color:#A32D2D;" aria-hidden="true"></i><div class="trow-label"><div>Hazardous — utility shelf, out of reach</div><div class="trow-sub">Small sealed box, take to drop-off monthly</div></div><div class="badge badge-neutral">5–10 L box</div></div>
+  </div>
+  <div class="note">Where to buy in Thailand: HomePro / Thaiwatsadu for bins. Makro / Big C for coloured bags in bulk. Yellow and blue bags are common; search "ถุงย่อยสลายได้" on Lazada for biodegradable green bags. Search "ถังขยะแยกสี" for full colour-coded sets.</div>
+</div>
+
+<div id="panel-organic" class="panel">
+  <h3>Why organic needs its own strategy in Thailand</h3>
+  <div class="note" style="margin-bottom:14px;">Most Thai municipalities don't separately collect organic waste yet. You must process it at home — the tropical heat actually makes this faster than in Germany.</div>
+  <div class="tip-grid">
+    <div class="tip-card" style="border:2px solid var(--color-border-info);">
+      <div class="tip-title"><i class="ti ti-star" style="font-size:16px;" aria-hidden="true"></i>Bokashi (recommended)</div>
+      <div class="tip-body">Anaerobic fermentation in a sealed bucket with inoculated bran (โบกาฉิ). Handles all food including cooked food and small amounts of meat/fish — a major advantage over regular compost. Two buckets rotate. Drain liquid every few days (dilute 1:100 as fertiliser). After 2 weeks, bury pre-compost in soil or a large pot. No flies, no smell (slightly pickled). Buy bran on Lazada: "โบกาฉิ".</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title"><i class="ti ti-plant-2" style="font-size:16px;" aria-hidden="true"></i>Compost pile / bin</div>
+      <div class="tip-body">Best with a garden. Layer green (food scraps) with brown (dried leaves, shredded paper, coconut coir). Thailand's heat means fast breakdown — turn weekly. Cover to deter rats. Not suitable for meat/fish without hot composting.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title"><i class="ti ti-worm" style="font-size:16px;" aria-hidden="true"></i>Vermicomposting</div>
+      <div class="tip-body">Worm farm (ไส้เดือนดิน) using Eisenia fetida. Excellent fertiliser output. Requires shade and moisture control. Avoid excess citrus, onion, spicy food. Good for condo balconies.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title"><i class="ti ti-building-community" style="font-size:16px;" aria-hidden="true"></i>Can't compost?</div>
+      <div class="tip-body">Freeze scraps to kill pests, then donate to a local temple, school, or community garden that composts. Or check if your เทศบาล has started organic collection — many Bangkok districts now do.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>Bokashi vs compost quick comparison</h3>
+  <div class="table-card">
+    <div class="trow"><div class="trow-label"><div style="font-weight:500;">Accepts cooked food & meat</div></div><div class="badge badge-success">Bokashi: yes</div><div class="badge badge-danger" style="margin-left:6px;">Compost: no</div></div>
+    <div class="trow"><div class="trow-label"><div style="font-weight:500;">Flies and odour</div></div><div class="badge badge-success">Bokashi: none</div><div class="badge badge-warn" style="margin-left:6px;">Compost: possible</div></div>
+    <div class="trow"><div class="trow-label"><div style="font-weight:500;">Space needed</div></div><div class="badge badge-success">Bokashi: 2 small buckets</div><div class="badge badge-warn" style="margin-left:6px;">Compost: outdoor bin</div></div>
+    <div class="trow"><div class="trow-label"><div style="font-weight:500;">Produces liquid fertiliser</div></div><div class="badge badge-success">Bokashi: yes</div><div class="badge badge-neutral" style="margin-left:6px;">Compost: no</div></div>
+    <div class="trow"><div class="trow-label"><div style="font-weight:500;">Needs burial / second step</div></div><div class="badge badge-warn">Bokashi: yes</div><div class="badge badge-neutral" style="margin-left:6px;">Compost: no</div></div>
+  </div>
+</div>
+
+<div id="panel-outbound" class="panel">
+  <h3>The core problem: collectors mixing streams back</h3>
+  <div class="note" style="margin-bottom:14px;">The solution is to remove high-value streams (paper + recyclables) from municipal collection entirely. Only the blue residual bag enters the public truck.</div>
+
+  <div class="tip-grid">
+    <div class="tip-card" style="border:2px solid var(--color-border-success);">
+      <div class="tip-title"><i class="ti ti-currency-baht" style="font-size:16px;" aria-hidden="true"></i>Sell to ซาเล้ง (best option)</div>
+      <div class="tip-body">Build a relationship with a local saleng or "รับซื้อของเก่า" shop. Arrange a regular Saturday pickup. They pay by weight and sort further themselves — zero chance of mixing. Typical prices: paper 3–5 ฿/kg, cardboard 5–8 ฿/kg, aluminium cans 30–50 ฿/kg. A family earns 50–200 ฿/month — use it as a household treat fund.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title"><i class="ti ti-building-bank" style="font-size:16px;" aria-hidden="true"></i>ธนาคารขยะ (waste bank)</div>
+      <div class="tip-body">Many temples, schools, and villages run waste banks. Bring pre-sorted recyclables, get credited as savings. Guarantees correct processing. Search "ธนาคารขยะ ใกล้ฉัน".</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title"><i class="ti ti-device-mobile" style="font-size:16px;" aria-hidden="true"></i>Apps: GEPP / WONGPANit</div>
+      <div class="tip-body">GEPP (เก็บ) schedules recyclable pickup from your home. WONGPANit (วงษ์พานิช) is a major scrap chain with transparent per-kg pricing. Both available in Bangkok and major cities.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title"><i class="ti ti-truck" style="font-size:16px;" aria-hidden="true"></i>If using municipal truck</div>
+      <div class="tip-body">Only the blue residual bag goes out. Use clearly different coloured bags. Attach waterproof Thai tags (see Labels tab). Put out bags 15–30 min before the truck — not overnight. Place recyclables in a separate labelled outdoor bin so they're visually distinct.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title"><i class="ti ti-users" style="font-size:16px;" aria-hidden="true"></i>Coordinate with neighbors</div>
+      <div class="tip-body">One sorting household is easy to ignore. Ten households on the same street force collectors to adapt. Share the poster and bag colours — propose a shared saleng pickup day for the street.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-title"><i class="ti ti-car" style="font-size:16px;" aria-hidden="true"></i>Self-haul (maximum control)</div>
+      <div class="tip-body">Deliver sorted recyclables and hazardous waste yourself to a municipal recycling centre or "ห้างรับซื้อของเก่า". Total control, often better prices. Worth doing for hazardous items monthly.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>Which stream goes where</h3>
+  <div class="table-card">
+    <div class="trow"><span style="width:10px;height:10px;border-radius:50%;background:#3B6D11;flex-shrink:0;"></span><div class="trow-label">Organic</div><div class="badge badge-success">Bokashi / home compost</div></div>
+    <div class="trow"><span style="width:10px;height:10px;border-radius:50%;background:#BA7517;flex-shrink:0;"></span><div class="trow-label">Paper</div><div class="badge badge-success">Saleng / waste bank</div></div>
+    <div class="trow"><span style="width:10px;height:10px;border-radius:50%;background:#EF9F27;flex-shrink:0;"></span><div class="trow-label">Recyclables</div><div class="badge badge-success">Saleng / GEPP / WONGPANit</div></div>
+    <div class="trow"><span style="width:10px;height:10px;border-radius:50%;background:#185FA5;flex-shrink:0;"></span><div class="trow-label">Residual</div><div class="badge badge-neutral">Municipal truck (blue bag only)</div></div>
+    <div class="trow"><span style="width:10px;height:10px;border-radius:50%;background:#A32D2D;flex-shrink:0;"></span><div class="trow-label">Hazardous</div><div class="badge badge-warn">Monthly drop-off: Big C / HomePro / อบต.</div></div>
+  </div>
+</div>
+
+<div id="panel-penalty" class="panel">
+  <h3>Sorting violation rules</h3>
+  <div class="table-card">
+    <div class="trow"><i class="ti ti-alert-circle" style="font-size:16px;color:var(--color-text-warning);" aria-hidden="true"></i><div class="trow-label"><div>Wrong bin (first offence)</div><div class="trow-sub">e.g. plastic bottle in blue bag</div></div><div class="badge badge-warn">20 ฿ fine</div></div>
+    <div class="trow"><i class="ti ti-refresh" style="font-size:16px;color:var(--color-text-warning);" aria-hidden="true"></i><div class="trow-label"><div>Repeated wrong bin</div><div class="trow-sub">Same person, same mistake</div></div><div class="badge badge-warn">20 ฿ + wash that bin for 1 week</div></div>
+    <div class="trow"><i class="ti ti-droplet-off" style="font-size:16px;color:var(--color-text-warning);" aria-hidden="true"></i><div class="trow-label"><div>Oily container in yellow bag</div><div class="trow-sub">Contaminates the recyclables</div></div><div class="badge badge-warn">20 ฿ fine</div></div>
+    <div class="trow"><i class="ti ti-x" style="font-size:16px;color:var(--color-text-danger);" aria-hidden="true"></i><div class="trow-label"><div>No bag colour coding at all</div><div class="trow-sub">Bags refused at collection point</div></div><div class="badge badge-danger">Bag not collected</div></div>
+    <div class="trow"><i class="ti ti-currency-baht" style="font-size:16px;color:var(--color-text-danger);" aria-hidden="true"></i><div class="trow-label"><div>Dumping outside bin day</div><div class="trow-sub">Legal penalty in Thailand</div></div><div class="badge badge-danger">฿200–2,000 municipal fine</div></div>
+  </div>
+
+  <div class="note">Fines go into a transparent "Recycling Jar" on the kitchen counter. At month-end: use the jar for a group treat, or donate to an environmental cause. A rotating weekly "Sorting Inspector" (family member) checks bins before collection day and issues fines.</div>
+
+  <div class="divider"></div>
+  <h3>Reward system</h3>
+  <div class="table-card">
+    <div class="trow"><i class="ti ti-star" style="font-size:16px;color:var(--color-text-warning);" aria-hidden="true"></i><div class="trow-label"><div>Zero violations in a week</div></div><div class="badge badge-warn">1 star on fridge chart</div></div>
+    <div class="trow"><i class="ti ti-stars" style="font-size:16px;color:var(--color-text-warning);" aria-hidden="true"></i><div class="trow-label"><div>4 consecutive stars</div></div><div class="badge badge-warn">Choose weekend activity or skip a chore</div></div>
+    <div class="trow"><i class="ti ti-currency-baht" style="font-size:16px;color:var(--color-text-success);" aria-hidden="true"></i><div class="trow-label"><div>Recyclables sold to ซาเล้ง</div><div class="trow-sub">Real cash from sorting discipline</div></div><div class="badge badge-success">50–200 ฿/month household treat</div></div>
+    <div class="trow"><i class="ti ti-gift" style="font-size:16px;color:var(--color-text-info);" aria-hidden="true"></i><div class="trow-label"><div>Children: sticker per correct sorting day</div></div><div class="badge badge-info">Small book or toy at milestone</div></div>
+  </div>
+</div>
+
+<div id="panel-roadmap" class="panel">
+  <h3>4-week implementation roadmap</h3>
+  <div class="week-grid">
+    <div class="week-card">
+      <div class="week-num">Week 1</div>
+      <div class="week-title">Setup & purchase</div>
+      <div class="week-items">
+        Buy 5 bins + bags<br>
+        Print sorting poster<br>
+        Call เทศบาล re: collection days<br>
+        Find nearest ซาเล้ง / waste bank<br>
+        Find hazardous drop-off<br>
+        Order Bokashi bucket + bran<br>
+        Set up bins in place
+      </div>
+    </div>
+    <div class="week-card">
+      <div class="week-num">Week 2</div>
+      <div class="week-title">Soft launch</div>
+      <div class="week-items">
+        Family meeting + walk-through<br>
+        Post Thai poster above bins<br>
+        Practice sort with sample trash<br>
+        Warning-only week (no fines yet)<br>
+        Start Bokashi first bucket<br>
+        Begin bundling paper<br>
+        Train any household helpers
+      </div>
+    </div>
+    <div class="week-card">
+      <div class="week-num">Week 3</div>
+      <div class="week-title">Go live</div>
+      <div class="week-items">
+        Fines begin (20 ฿/violation)<br>
+        First saleng pickup arranged<br>
+        Evening bin checks start<br>
+        First blue bag out on collection day<br>
+        First Bokashi bucket full → bury<br>
+        Hazardous box: begin filling
+      </div>
+    </div>
+    <div class="week-card">
+      <div class="week-num">Week 4</div>
+      <div class="week-title">Review & optimise</div>
+      <div class="week-items">
+        Measure residual bag volume<br>
+        Adjust bin sizes if needed<br>
+        Count saleng income earned<br>
+        First hazardous drop-off visit<br>
+        Update poster for any confusion<br>
+        Celebrate first reward if earned
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>Ongoing maintenance</h3>
+  <div class="table-card">
+    <div class="trow"><i class="ti ti-calendar" style="font-size:16px;" aria-hidden="true"></i><div class="trow-label"><div style="font-weight:500;">Weekly</div><div class="trow-sub">Wash organic + recycling bins · Check Bokashi drain · Sanitise residual bin lid</div></div></div>
+    <div class="trow"><i class="ti ti-calendar-month" style="font-size:16px;" aria-hidden="true"></i><div class="trow-label"><div style="font-weight:500;">Monthly</div><div class="trow-sub">Weigh/estimate residual volume · Log saleng income · Hazardous drop-off · Send Bokashi compost to garden</div></div></div>
+    <div class="trow"><i class="ti ti-bug" style="font-size:16px;" aria-hidden="true"></i><div class="trow-label"><div style="font-weight:500;">Pest tips (Thai climate)</div><div class="trow-sub">Tight lid on organic bin · Wipe rims with diluted vinegar to deter ants · Never leave sweet recyclables unrinsed · Bokashi is fully sealed — no rodent risk</div></div></div>
+  </div>
+</div>
+
+<div id="panel-labels" class="panel">
+  <h3>Printable Thai labels — laminate and attach to bins</h3>
+  <div class="label-block">
+    <div style="font-size:13px;font-weight:500;margin-bottom:10px;color:var(--color-text-primary);">บ้านนี้แยกขยะ — This house separates waste</div>
+    <div class="label-row">
+      <div class="lcolor" style="background:#3B6D11;"></div>
+      <div><div class="ltitle">ถังสีเขียว — ขยะเปียก / เศษอาหาร (Organic)</div><div class="lbody">✅ เศษผัก ผลไม้ เปลือกไข่ กากกาแฟ ใบไม้&nbsp;&nbsp; ❌ ห้าม: อาหารมัน กระดูก พลาสติก</div></div>
+    </div>
+    <div class="label-row">
+      <div class="lcolor" style="background:#BA7517;"></div>
+      <div><div class="ltitle">ถาดกระดาษ — กระดาษ / กล่องกระดาษ (Paper)</div><div class="lbody">✅ หนังสือพิมพ์ กล่องกระดาษ ลัง กระดาษเขียน&nbsp;&nbsp; ❌ ห้าม: กระดาษเปียก กล่องนม</div></div>
+    </div>
+    <div class="label-row">
+      <div class="lcolor" style="background:#EF9F27;"></div>
+      <div><div class="ltitle">ถังสีเหลือง — ขยะรีไซเคิล (Recyclables)</div><div class="lbody">✅ ขวดพลาสติก กระป๋อง ขวดแก้ว กล่องนม ล้างแล้ว ตากแห้ง&nbsp;&nbsp; ❌ ห้าม: โฟม หลอด ถุงขนม</div></div>
+    </div>
+    <div class="label-row">
+      <div class="lcolor" style="background:#185FA5;"></div>
+      <div><div class="ltitle">ถังสีน้ำเงิน — ขยะทั่วไป (Residual)</div><div class="lbody">✅ ทิชชู่ ผ้าอ้อม ถุงขนม โฟม ซากเซรามิก ฝุ่น&nbsp;&nbsp; ❌ ห้าม: ขยะอันตราย</div></div>
+    </div>
+    <div class="label-row">
+      <div class="lcolor" style="background:#A32D2D;"></div>
+      <div><div class="ltitle">กล่องแดง — ขยะอันตราย (Hazardous)</div><div class="lbody">✅ ถ่านไฟฉาย หลอดไฟ ยาหมดอายุ สารเคมี สีทา&nbsp;&nbsp; → นำไปทิ้งที่จุดรับขยะอันตรายเดือนละครั้ง</div></div>
+    </div>
+    <div style="font-size:11px;color:var(--color-text-secondary);margin-top:10px;">กรุณาแยกก่อนทิ้ง – Please sort before throwing away. ขอบคุณค่ะ/ครับ</div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>Bag tags for collection day</h3>
+  <div class="tip-grid">
+    <div class="tip-card"><div class="tip-title" style="color:#3B6D11;">Green bag tag</div><div class="tip-body">ขยะเปียก – สำหรับทำปุ๋ย<br><span style="color:var(--color-text-secondary);font-size:11px;">Organic waste – for composting</span></div></div>
+    <div class="tip-card"><div class="tip-title" style="color:#EF9F27;">Yellow bag tag</div><div class="tip-body">ขยะรีไซเคิล – แยกแล้ว กรุณาอย่าเทรวม<br><span style="color:var(--color-text-secondary);font-size:11px;">Recyclable waste – already sorted, please do not mix</span></div></div>
+    <div class="tip-card"><div class="tip-title" style="color:#185FA5;">Blue bag tag</div><div class="tip-body">ขยะทั่วไป – ถุงสีน้ำเงิน<br><span style="color:var(--color-text-secondary);font-size:11px;">General waste – blue bag</span></div></div>
+  </div>
+  <div class="note">Print bag tags on cardstock, laminate or cover with tape, punch a hole, and tie to the bag handle with string. Makes intent unambiguous to any collector.</div>
+</div>
+</div>
+
+<script>
+function showTab(name){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
