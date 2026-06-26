@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Waste Management System — Thailand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <span class="nav-logo">บ้านนี้แยกขยะ</span>
+      <div class="nav-tabs" id="navTabs">
+        <button class="nav-tab active" data-panel="overview">Overview</button>
+        <button class="nav-tab" data-panel="streams">5 Streams</button>
+        <button class="nav-tab" data-panel="organic">Organic</button>
+        <button class="nav-tab" data-panel="outbound">Outbound</button>
+        <button class="nav-tab" data-panel="penalty">Rules</button>
+        <button class="nav-tab" data-panel="roadmap">Roadmap</button>
+        <button class="nav-tab" data-panel="labels">Labels</button>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <!-- ══════════════════ OVERVIEW ══════════════════ -->
+    <section class="panel active" id="panel-overview">
+
+      <div class="hero">
+        <div class="hero-eyebrow">German discipline · Thai pragmatism</div>
+        <h1 class="hero-title">Home Waste<br>Management System</h1>
+        <p class="hero-sub">A five-stream household waste plan adapted from Germany's Bioabfall / Papier / Wertstoff / Restmüll model — fully mapped to Thailand's colour standards, saleng economy, and tropical climate.</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">5</span>
+            <span class="stat-label">Waste streams</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-num">60–80%</span>
+            <span class="stat-label">Landfill reduction target</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-num">฿200/mo</span>
+            <span class="stat-label">Potential saleng income</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">What this system does</h2>
+        <div class="card-grid cols-3">
+          <div class="card">
+            <div class="card-icon icon-green">&#9850;</div>
+            <h3>Stops the mix-back problem</h3>
+            <p>High-value streams (paper, recyclables, organic) never enter the municipal truck. They go to saleng, Bokashi, or drop-off points — so collectors physically cannot reverse your sorting.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon icon-amber">&#9775;</div>
+            <h3>Turns waste into income</h3>
+            <p>Sorted aluminium, PET, paper, and cardboard are assets. A regular saleng relationship earns 50–200 ฿/month and creates a financial incentive stronger than any penalty system.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon icon-blue">&#9672;</div>
+            <h3>Works in Thailand's climate</h3>
+            <p>Bokashi fermentation replaces German brown-bin composting — it handles oily Thai food, seals against fruit flies, and produces liquid fertiliser. No outdoor pile needed.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Germany → Thailand mapping</h2>
+        <div class="mapping-table">
+          <div class="mapping-header">
+            <span>German stream</span>
+            <span>Thai equivalent</span>
+            <span>Bag colour</span>
+            <span>Destination</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mono">Bioabfall</span>
+            <span>ขยะเปียก Organic</span>
+            <span><span class="dot" style="background:#3B6D11;"></span>Green</span>
+            <span>Bokashi / home compost</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mono">Papier</span>
+            <span>กระดาษ Paper</span>
+            <span><span class="dot" style="background:#BA7517;"></span>Amber bundle</span>
+            <span>Saleng / waste bank</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mono">Wertstoff</span>
+            <span>ขยะรีไซเคิล Recyclables</span>
+            <span><span class="dot" style="background:#EF9F27;"></span>Yellow</span>
+            <span>Saleng / GEPP app</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mono">Restmüll</span>
+            <span>ขยะทั่วไป Residual</span>
+            <span><span class="dot" style="background:#185FA5;"></span>Blue</span>
+            <span>Municipal truck only</span>
+          </div>
+          <div class="mapping-row">
+            <span class="mono">Sondermüll</span>
+            <span>ขยะอันตราย Hazardous</span>
+            <span><span class="dot" style="background:#A32D2D;"></span>Red sealed</span>
+            <span>Monthly drop-off</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════ STREAMS ══════════════════ -->
+    <section class="panel" id="panel-streams">
+
+      <div class="section">
+        <h2 class="section-title">The five streams</h2>
+        <p class="section-sub">Each stream has a fixed colour, bag type, and destination. The goal: only the blue residual bag ever touches the municipal truck.</p>
+
+        <div class="stream-grid">
+
+          <div class="stream-card" data-color="green">
+            <div class="stream-swatch sw-green">
+              <div class="sw-lid swl-green"></div>
+              <span class="sw-icon">&#127807;</span>
+            </div>
+            <div class="stream-body">
+              <div class="stream-name">Organic · ขยะเปียก</div>
+              <div class="stream-german">Bioabfall equivalent</div>
+              <div class="stream-bag"><span class="dot-sm" style="background:#3B6D11;"></span>Green biodegradable bag</div>
+              <div class="stream-size">15–20 L · kitchen, lidded</div>
+              <div class="yes-no">
+                <div class="yes">
+                  <div class="yn-head">Yes</div>
+                  Fruit/veg peels, cores<br>
+                  Eggshells, coffee grounds<br>
+                  Plain rice, noodles, bread<br>
+                  Leaves, garden trimmings
+                </div>
+                <div class="no">
+                  <div class="yn-head">No</div>
+                  Oily curries, sauces<br>
+                  Meat, fish, bones<br>
+                  Dairy, cooking oil<br>
+                  Plastic stickers on fruit
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stream-card" data-color="amber">
+            <div class="stream-swatch sw-amber">
+              <div class="sw-lid swl-amber"></div>
+              <span class="sw-icon">&#128196;</span>
+            </div>
+            <div class="stream-body">
+              <div class="stream-name">Paper · กระดาษ</div>
+              <div class="stream-german">Papier equivalent</div>
+              <div class="stream-bag"><span class="dot-sm" style="background:#BA7517;"></span>No bag — tie with string</div>
+              <div class="stream-size">25–30 L basket · dry area</div>
+              <div class="yes-no">
+                <div class="yes">
+                  <div class="yn-head">Yes</div>
+                  Newspapers, magazines<br>
+                  Office paper, envelopes<br>
+                  Cardboard (flattened)<br>
+                  Paper bags, egg cartons
+                </div>
+                <div class="no">
+                  <div class="yn-head">No</div>
+                  Waxed / laminated paper<br>
+                  Greasy or wet paper<br>
+                  Coffee cups (plastic-lined)<br>
+                  Milk cartons → yellow bin
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stream-card" data-color="yellow">
+            <div class="stream-swatch sw-yellow">
+              <div class="sw-lid swl-yellow"></div>
+              <span class="sw-icon">&#9851;</span>
+            </div>
+            <div class="stream-body">
+              <div class="stream-name">Recyclables · ขยะรีไซเคิล</div>
+              <div class="stream-german">Wertstoff equivalent</div>
+              <div class="stream-bag"><span class="dot-sm" style="background:#EF9F27;"></span>Yellow translucent bag</div>
+              <div class="stream-size">40–60 L · kitchen or balcony</div>
+              <div class="yes-no">
+                <div class="yes">
+                  <div class="yn-head">Yes</div>
+                  PET/HDPE bottles (crushed)<br>
+                  Aluminium cans, tins<br>
+                  Glass bottles (rinsed)<br>
+                  UHT cartons, plastic #1 #2 #5
+                </div>
+                <div class="no">
+                  <div class="yn-head">No</div>
+                  Styrofoam / foam trays<br>
+                  Chip bags, sachets<br>
+                  Dirty/oily containers<br>
+                  Straws, thin single-use bags
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stream-card" data-color="blue">
+            <div class="stream-swatch sw-blue">
+              <div class="sw-lid swl-blue"></div>
+              <span class="sw-icon">&#128465;</span>
+            </div>
+            <div class="stream-body">
+              <div class="stream-name">Residual · ขยะทั่วไป</div>
+              <div class="stream-german">Restmüll equivalent</div>
+              <div class="stream-bag"><span class="dot-sm" style="background:#185FA5;"></span>Blue opaque bag</div>
+              <div class="stream-size">30–40 L · kitchen, beside organic</div>
+              <div class="yes-no">
+                <div class="yes">
+                  <div class="yn-head">Yes</div>
+                  Tissues, wet wipes, diapers<br>
+                  Styrofoam, foam trays<br>
+                  Broken ceramics, Pyrex<br>
+                  Chip bags, candy wrappers<br>
+                  Toothbrush, razor, cat litter
+                </div>
+                <div class="no">
+                  <div class="yn-head">No</div>
+                  Batteries → red box<br>
+                  Light bulbs → red box<br>
+                  Medicines → red box<br>
+                  Recyclables → yellow bag
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stream-card" data-color="red">
+            <div class="stream-swatch sw-red">
+              <div class="sw-lid swl-red"></div>
+              <span class="sw-icon">&#9888;</span>
+            </div>
+            <div class="stream-body">
+              <div class="stream-name">Hazardous · ขยะอันตราย</div>
+              <div class="stream-german">Sondermüll equivalent</div>
+              <div class="stream-bag"><span class="dot-sm" style="background:#A32D2D;"></span>Red sealed bag / small box</div>
+              <div class="stream-size">5–10 L box · utility shelf, child-proof</div>
+              <div class="yes-no">
+                <div class="yes">
+                  <div class="yn-head">Yes</div>
+                  Batteries (tape terminals)<br>
+                  CFL/LED bulbs, tubes<br>
+                  Expired medicines<br>
+                  Paint, solvents, pesticide<br>
+                  Cooking oil (separate)
+                </div>
+                <div class="no">
+                  <div class="yn-head">Drop-off points</div>
+                  Big C, HomePro<br>
+                  Community hospitals<br>
+                  อบต. hazardous days<br>
+                  → Take monthly, never daily
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Where to buy in Thailand</h2>
+        <div class="card-grid cols-2">
+          <div class="card">
+            <h3>Bins</h3>
+            <p>HomePro, Thaiwatsadu, Daiso — buy any colour and add coloured stickers/spray paint to lids. Search <span class="mono">ถังขยะแยกสี</span> on Lazada/Shopee for pre-coloured sets.</p>
+          </div>
+          <div class="card">
+            <h3>Bags</h3>
+            <p>Makro, Big C, Tesco for bulk coloured bags. Blue and yellow are common. For biodegradable green bags search <span class="mono">ถุงย่อยสลายได้</span> on Lazada. Bokashi bran: search <span class="mono">โบกาฉิ</span>.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════ ORGANIC ══════════════════ -->
+    <section class="panel" id="panel-organic">
+
+      <div class="section">
+        <h2 class="section-title">Organic waste: the Thai challenge</h2>
+        <p class="section-sub">Most Thai municipalities don't collect organic waste separately yet. You process it at home — and Thailand's heat actually accelerates breakdown faster than Germany.</p>
+      </div>
+
+      <div class="section">
+        <div class="featured-card">
+          <div class="featured-tag">Recommended for Thai homes</div>
+          <h3>Bokashi composting · โบกาฉิ</h3>
+          <p>Anaerobic fermentation in a sealed bucket with inoculated bran. Unlike a compost pile, Bokashi handles all food waste including cooked food and small amounts of meat and fish — the dominant waste types in a Thai kitchen.</p>
+          <div class="bokashi-steps">
+            <div class="bstep"><span class="bstep-num">1</span><span>Layer food scraps in sealed bucket, sprinkle Bokashi bran, press to remove air, seal lid.</span></div>
+            <div class="bstep"><span class="bstep-num">2</span><span>Drain liquid every few days. Dilute 1:100 with water → excellent fertiliser for plants.</span></div>
+            <div class="bstep"><span class="bstep-num">3</span><span>When full, let ferment 2 weeks. Bury in soil or large pot to finish composting.</span></div>
+            <div class="bstep"><span class="bstep-num">4</span><span>Rotate two buckets so one is always available. No smell, no insects, no rodents.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Bokashi vs alternatives</h2>
+        <div class="compare-table">
+          <div class="compare-header">
+            <span>Feature</span>
+            <span class="c-bokashi">Bokashi</span>
+            <span class="c-compost">Compost pile</span>
+            <span class="c-worm">Worm farm</span>
+          </div>
+          <div class="compare-row">
+            <span>Accepts cooked food &amp; meat</span>
+            <span class="yes-cell">Yes</span>
+            <span class="no-cell">No</span>
+            <span class="no-cell">No</span>
+          </div>
+          <div class="compare-row">
+            <span>Flies and odour</span>
+            <span class="yes-cell">None</span>
+            <span class="no-cell">Possible</span>
+            <span class="warn-cell">Managed</span>
+          </div>
+          <div class="compare-row">
+            <span>Space needed</span>
+            <span class="yes-cell">2 small buckets</span>
+            <span class="warn-cell">Outdoor bin</span>
+            <span class="warn-cell">Shaded box</span>
+          </div>
+          <div class="compare-row">
+            <span>Liquid fertiliser output</span>
+            <span class="yes-cell">Yes</span>
+            <span class="no-cell">No</span>
+            <span class="yes-cell">Yes</span>
+          </div>
+          <div class="compare-row">
+            <span>Condo / no-garden friendly</span>
+            <span class="yes-cell">Yes</span>
+            <span class="no-cell">No</span>
+            <span class="warn-cell">Balcony ok</span>
+          </div>
+          <div class="compare-row">
+            <span>Needs burial / second step</span>
+            <span class="warn-cell">Yes</span>
+            <span class="no-cell">No</span>
+            <span class="yes-cell">No</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Can't compost at home?</h2>
+        <div class="card-grid cols-3">
+          <div class="card">
+            <h3>Freeze &amp; donate</h3>
+            <p>Freeze scraps to kill pests, then donate to a local temple, school, or community garden that composts. Many Bangkok temples run composting programs.</p>
+          </div>
+          <div class="card">
+            <h3>Municipal green bin</h3>
+            <p>Check with your เทศบาล — many Bangkok districts and some provincial cities now collect organic waste separately on designated days.</p>
+          </div>
+          <div class="card">
+            <h3>Trash Hero Thailand</h3>
+            <p>Community-based cleanup and composting network. Good for bulk organic donation and connecting with local eco-communities.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════ OUTBOUND ══════════════════ -->
+    <section class="panel" id="panel-outbound">
+
+      <div class="section">
+        <h2 class="section-title">The mix-back problem — and the fix</h2>
+        <p class="section-sub">The core challenge: collectors dump everything into one truck. The solution is to remove your valuable streams from municipal collection entirely, so they can never be mixed back.</p>
+        <div class="rule-box">
+          <span class="rule-label">Golden rule</span>
+          Only the blue residual bag ever goes into the public truck. All other streams have dedicated, separate destinations.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Outbound routes by stream</h2>
+        <div class="route-list">
+          <div class="route-row">
+            <span class="dot" style="background:#3B6D11;"></span>
+            <span class="route-stream">Organic</span>
+            <span class="route-arrow">→</span>
+            <span class="route-dest">Bokashi bucket or home compost</span>
+            <span class="badge-success">Zero municipal contact</span>
+          </div>
+          <div class="route-row">
+            <span class="dot" style="background:#BA7517;"></span>
+            <span class="route-stream">Paper</span>
+            <span class="route-arrow">→</span>
+            <span class="route-dest">Saleng / ธนาคารขยะ</span>
+            <span class="badge-success">Sells for 3–8 ฿/kg</span>
+          </div>
+          <div class="route-row">
+            <span class="dot" style="background:#EF9F27;"></span>
+            <span class="route-stream">Recyclables</span>
+            <span class="route-arrow">→</span>
+            <span class="route-dest">Saleng / GEPP / WONGPANit</span>
+            <span class="badge-success">Aluminium 30–50 ฿/kg</span>
+          </div>
+          <div class="route-row">
+            <span class="dot" style="background:#185FA5;"></span>
+            <span class="route-stream">Residual</span>
+            <span class="route-arrow">→</span>
+            <span class="route-dest">Municipal truck (blue bag only)</span>
+            <span class="badge-neutral">True non-recyclables only</span>
+          </div>
+          <div class="route-row">
+            <span class="dot" style="background:#A32D2D;"></span>
+            <span class="route-stream">Hazardous</span>
+            <span class="route-arrow">→</span>
+            <span class="route-dest">Big C / HomePro / อบต. day</span>
+            <span class="badge-warn">Monthly drop-off</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">If you must use the municipal truck for all bags</h2>
+        <div class="card-grid cols-2">
+          <div class="card">
+            <h3>Colour-code everything</h3>
+            <p>Use clearly different coloured bags for each stream. Translucent yellow bags show contents visibly. Attach waterproof Thai-language tags to each bag identifying the stream.</p>
+          </div>
+          <div class="card">
+            <h3>Put bags out last-minute</h3>
+            <p>Only put bags out 15–30 minutes before the truck arrives. Bags left overnight get mixed by informal collectors or rain damage destroys the colour coding.</p>
+          </div>
+          <div class="card">
+            <h3>Talk to your collector</h3>
+            <p>Introduce yourself, explain you're separating waste, ask them to keep bags separate. Offer cold water or snacks. Personal rapport changes behaviour more than any label.</p>
+          </div>
+          <div class="card">
+            <h3>Labelled outdoor bins</h3>
+            <p>Place official-coloured bins outside with matching bags inside. Visual separation of bins makes it harder for collectors to mix casually.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Thailand recycling apps &amp; services</h2>
+        <div class="app-grid">
+          <div class="app-card">
+            <div class="app-name">GEPP · เก็บ</div>
+            <div class="app-desc">Schedules recyclable pickup from your home. Available Bangkok and major cities.</div>
+          </div>
+          <div class="app-card">
+            <div class="app-name">WONGPANit · วงษ์พานิช</div>
+            <div class="app-desc">Major scrap dealer chain. Transparent per-kg pricing, home pickup scheduling.</div>
+          </div>
+          <div class="app-card">
+            <div class="app-name">ธนาคารขยะ</div>
+            <div class="app-desc">Community waste banks at temples, schools, villages. Credits as savings. Search "ธนาคารขยะ ใกล้ฉัน".</div>
+          </div>
+          <div class="app-card">
+            <div class="app-name">ซาเล้ง · Local saleng</div>
+            <div class="app-desc">Informal waste buyer with truck or tricycle. Set a regular Saturday pickup. Zero chance of stream mixing.</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════ PENALTY ══════════════════ -->
+    <section class="panel" id="panel-penalty">
+
+      <div class="section">
+        <h2 class="section-title">Household compliance system</h2>
+        <p class="section-sub">Behaviour change requires structure. The fine system is light enough not to cause conflict, heavy enough to make people think twice.</p>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Violation rules</h2>
+        <div class="penalty-table">
+          <div class="pen-row">
+            <span class="pen-icon warn">!</span>
+            <div class="pen-info">
+              <div class="pen-name">Wrong bin — first offence</div>
+              <div class="pen-eg">e.g. plastic bottle in blue bag</div>
+            </div>
+            <span class="badge-warn">20 ฿ fine</span>
+          </div>
+          <div class="pen-row">
+            <span class="pen-icon warn">!!</span>
+            <div class="pen-info">
+              <div class="pen-name">Repeated wrong bin</div>
+              <div class="pen-eg">Same person, same mistake again</div>
+            </div>
+            <span class="badge-warn">20 ฿ + wash that bin for 1 week</span>
+          </div>
+          <div class="pen-row">
+            <span class="pen-icon warn">~</span>
+            <div class="pen-info">
+              <div class="pen-name">Oily container in yellow bag</div>
+              <div class="pen-eg">Contaminates the whole recyclables batch</div>
+            </div>
+            <span class="badge-warn">20 ฿ fine</span>
+          </div>
+          <div class="pen-row">
+            <span class="pen-icon danger">X</span>
+            <div class="pen-info">
+              <div class="pen-name">No bag colour coding at all</div>
+              <div class="pen-eg">Bag refused at collection point</div>
+            </div>
+            <span class="badge-danger">Bag not collected</span>
+          </div>
+          <div class="pen-row">
+            <span class="pen-icon danger">฿</span>
+            <div class="pen-info">
+              <div class="pen-name">Dumping outside bin day</div>
+              <div class="pen-eg">Thai municipal law applies</div>
+            </div>
+            <span class="badge-danger">฿200–2,000 legal fine</span>
+          </div>
+        </div>
+        <div class="note-box">Fines go into a transparent <strong>Recycling Jar</strong> on the kitchen counter. At month-end: group treat or environmental charity donation. A rotating weekly <strong>Sorting Inspector</strong> (family member) checks bins before collection day and issues fines.</div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Reward system</h2>
+        <div class="reward-grid">
+          <div class="reward-card">
+            <div class="reward-star">&#9733;</div>
+            <div class="reward-cond">Zero violations in a week</div>
+            <div class="reward-prize">1 star on fridge chart</div>
+          </div>
+          <div class="reward-card">
+            <div class="reward-star">&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="reward-cond">4 consecutive stars</div>
+            <div class="reward-prize">Choose weekend activity or skip a chore</div>
+          </div>
+          <div class="reward-card">
+            <div class="reward-star">฿</div>
+            <div class="reward-cond">Recyclables sold to saleng</div>
+            <div class="reward-prize">50–200 ฿/month household treat fund</div>
+          </div>
+          <div class="reward-card">
+            <div class="reward-star">&#127873;</div>
+            <div class="reward-cond">Children: sticker per correct day</div>
+            <div class="reward-prize">Small book or toy at milestone</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Onboarding checklist</h2>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox" /><span>Hold 30-minute family meeting — walk through all 5 bins together</span></label>
+          <label class="check-item"><input type="checkbox" /><span>Practice-sort a sample bag of mixed trash to test understanding</span></label>
+          <label class="check-item"><input type="checkbox" /><span>Post Thai sorting poster above bins</span></label>
+          <label class="check-item"><input type="checkbox" /><span>Train household helpers — add poster in their language if needed</span></label>
+          <label class="check-item"><input type="checkbox" /><span>Run one warning-only week before fines start</span></label>
+          <label class="check-item"><input type="checkbox" /><span>Place Recycling Jar on kitchen counter, visible to everyone</span></label>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════ ROADMAP ══════════════════ -->
+    <section class="panel" id="panel-roadmap">
+
+      <div class="section">
+        <h2 class="section-title">4-week implementation roadmap</h2>
+        <p class="section-sub">Start simple: organic + recyclables + residual is enough in week one. Add paper separation once the household is comfortable.</p>
+      </div>
+
+      <div class="week-grid">
+        <div class="week-card">
+          <div class="week-label">Week 1</div>
+          <div class="week-title">Setup &amp; purchase</div>
+          <ul class="week-list">
+            <li>Buy 5 bins + coloured bags</li>
+            <li>Print and laminate sorting poster</li>
+            <li>Call เทศบาล re: collection days</li>
+            <li>Find nearest saleng / waste bank</li>
+            <li>Find hazardous drop-off point</li>
+            <li>Order Bokashi bucket + bran</li>
+            <li>Position all bins in place</li>
+          </ul>
+        </div>
+        <div class="week-card">
+          <div class="week-label">Week 2</div>
+          <div class="week-title">Soft launch</div>
+          <ul class="week-list">
+            <li>Family meeting + walkthrough</li>
+            <li>Practice sort a bag of mixed trash</li>
+            <li>Warning-only week — no fines yet</li>
+            <li>Start Bokashi first bucket</li>
+            <li>Begin bundling paper separately</li>
+            <li>Train any household helpers</li>
+            <li>Put up Thai labels on all bins</li>
+          </ul>
+        </div>
+        <div class="week-card">
+          <div class="week-label">Week 3</div>
+          <div class="week-title">Go live</div>
+          <ul class="week-list">
+            <li>Fines begin (20 ฿/violation)</li>
+            <li>Contact saleng for first pickup</li>
+            <li>Evening bin checks begin</li>
+            <li>First blue bag out on collection day</li>
+            <li>First Bokashi bucket full → bury</li>
+            <li>Hazardous box: begin filling</li>
+            <li>Jar on counter, visible to all</li>
+          </ul>
+        </div>
+        <div class="week-card">
+          <div class="week-label">Week 4</div>
+          <div class="week-title">Review &amp; optimise</div>
+          <ul class="week-list">
+            <li>Measure residual bag volume</li>
+            <li>Adjust bin sizes if needed</li>
+            <li>Count saleng income earned</li>
+            <li>First hazardous drop-off visit</li>
+            <li>Update poster for any confusion</li>
+            <li>Celebrate first reward if earned</li>
+            <li>Share system with one neighbour</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section" style="margin-top:2rem;">
+        <h2 class="section-title">Ongoing maintenance</h2>
+        <div class="maint-grid">
+          <div class="maint-card">
+            <div class="maint-freq">Weekly</div>
+            <ul class="week-list">
+              <li>Wash organic bin with soap + water</li>
+              <li>Rinse recycling bin (prevents ants)</li>
+              <li>Check Bokashi drain spigot, empty liquid</li>
+              <li>Sanitise residual bin lid</li>
+              <li>Rotate Sorting Inspector role</li>
+            </ul>
+          </div>
+          <div class="maint-card">
+            <div class="maint-freq">Monthly</div>
+            <ul class="week-list">
+              <li>Estimate residual bag volume — aim to reduce each month</li>
+              <li>Log saleng / app income in household journal</li>
+              <li>Bokashi compost → garden or potted plants</li>
+              <li>Hazardous drop-off at Big C / HomePro / อบต.</li>
+              <li>Review reward chart, pay out stars</li>
+            </ul>
+          </div>
+          <div class="maint-card">
+            <div class="maint-freq">Pest tips — Thai climate</div>
+            <ul class="week-list">
+              <li>Fruit flies: tight lid + empty organic daily + Bokashi bran layer on top</li>
+              <li>Ants: wipe bin rims with diluted vinegar or peppermint oil</li>
+              <li>Cockroaches: sealed bins, clean immediately after cooking</li>
+              <li>Rodents: Bokashi is fully sealed — no rodent access</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════ LABELS ══════════════════ -->
+    <section class="panel" id="panel-labels">
+
+      <div class="section">
+        <h2 class="section-title">Printable Thai labels</h2>
+        <p class="section-sub">Print, laminate, and attach above each bin. Bilingual — Thai household members and helpers can both read them.</p>
+      </div>
+
+      <div class="label-poster">
+        <div class="poster-title">บ้านนี้แยกขยะ — This house separates waste</div>
+
+        <div class="label-row-item" style="--accent:#3B6D11;">
+          <div class="lr-swatch" style="background:#3B6D11;"></div>
+          <div class="lr-body">
+            <div class="lr-title">ถังสีเขียว — ขยะเปียก / เศษอาหาร <span class="lr-en">Green bin · Organic</span></div>
+            <div class="lr-yes">✅ เศษผัก ผลไม้ เปลือกไข่ กากกาแฟ ใบไม้ เศษหญ้า</div>
+            <div class="lr-no">❌ ห้าม: อาหารมัน กระดูก เนื้อสัตว์ พลาสติก</div>
+          </div>
+        </div>
+
+        <div class="label-row-item" style="--accent:#BA7517;">
+          <div class="lr-swatch" style="background:#BA7517;"></div>
+          <div class="lr-body">
+            <div class="lr-title">ถาดกระดาษ — กระดาษ / กล่องกระดาษ <span class="lr-en">Paper basket · Paper &amp; cardboard</span></div>
+            <div class="lr-yes">✅ หนังสือพิมพ์ กล่องกระดาษ ลัง กระดาษเขียน กระดาษห่อ</div>
+            <div class="lr-no">❌ ห้าม: กระดาษเปียก กระดาษเคลือบ กล่องนม</div>
+          </div>
+        </div>
+
+        <div class="label-row-item" style="--accent:#EF9F27;">
+          <div class="lr-swatch" style="background:#EF9F27;"></div>
+          <div class="lr-body">
+            <div class="lr-title">ถังสีเหลือง — ขยะรีไซเคิล <span class="lr-en">Yellow bin · Recyclables</span></div>
+            <div class="lr-yes">✅ ขวดพลาสติก กระป๋อง ขวดแก้ว กล่องนม ล้างแล้ว ตากแห้ง</div>
+            <div class="lr-no">❌ ห้าม: โฟม หลอด ถุงขนม บรรจุภัณฑ์หลายชั้น</div>
+          </div>
+        </div>
+
+        <div class="label-row-item" style="--accent:#185FA5;">
+          <div class="lr-swatch" style="background:#185FA5;"></div>
+          <div class="lr-body">
+            <div class="lr-title">ถังสีน้ำเงิน — ขยะทั่วไป <span class="lr-en">Blue bin · Residual waste</span></div>
+            <div class="lr-yes">✅ ทิชชู่ ผ้าอ้อม ถุงขนม โฟม ซากเซรามิก ฝุ่น ขี้แมว</div>
+            <div class="lr-no">❌ ห้าม: ขยะอันตราย ขยะรีไซเคิล</div>
+          </div>
+        </div>
+
+        <div class="label-row-item" style="--accent:#A32D2D;">
+          <div class="lr-swatch" style="background:#A32D2D;"></div>
+          <div class="lr-body">
+            <div class="lr-title">กล่องแดง — ขยะอันตราย <span class="lr-en">Red box · Hazardous</span></div>
+            <div class="lr-yes">✅ ถ่านไฟฉาย หลอดไฟ ยาหมดอายุ สีทา สารเคมี น้ำมันพืชใช้แล้ว</div>
+            <div class="lr-no">→ นำไปทิ้งที่จุดรับขยะอันตราย (Big C / HomePro / อบต.) เดือนละครั้ง</div>
+          </div>
+        </div>
+
+        <div class="poster-footer">กรุณาแยกก่อนทิ้ง — Please sort before throwing away &nbsp;·&nbsp; ขอบคุณค่ะ / ครับ</div>
+      </div>
+
+      <div class="section" style="margin-top:2rem;">
+        <h2 class="section-title">Bag tags for collection day</h2>
+        <p class="section-sub">Print on cardstock, laminate or wrap in tape, punch a hole, tie to bag handle with string. Makes stream intent unambiguous to any collector.</p>
+        <div class="tag-grid">
+          <div class="bag-tag" style="border-color:#3B6D11;color:#3B6D11;">
+            <div class="tag-th">ขยะเปียก – สำหรับทำปุ๋ย</div>
+            <div class="tag-en">Organic waste — for composting</div>
+          </div>
+          <div class="bag-tag" style="border-color:#EF9F27;color:#854F0B;">
+            <div class="tag-th">ขยะรีไซเคิล – แยกแล้ว กรุณาอย่าเทรวม</div>
+            <div class="tag-en">Recyclable waste — already sorted, please do not mix</div>
+          </div>
+          <div class="bag-tag" style="border-color:#185FA5;color:#185FA5;">
+            <div class="tag-th">ขยะทั่วไป – ถุงสีน้ำเงิน</div>
+            <div class="tag-en">General waste — blue bag</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>Household Waste Management System · Adapted from German 4-stream model · Thailand 2025</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
