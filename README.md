@@ -52,21 +52,13 @@ A proposal presentation website adapting **Germany's 4-stream waste model** (Bio
 ## 📁 Files
 
 ```
-index.html   — content and structure
+index.html   — content and structure (the page is mostly content)
 style.css    — design system and responsive layout
-app.js       — tab navigation, animations, checklist persistence
+app.js       — tab navigation, animations, checklist persistence (a small script)
 ```
+
+Keep content, behaviour, and styles separate; add script modules only when the interactive code grows.
 
 ---
 
 _Thailand 2025 · Inspired by Germany's Kreislaufwirtschaft_
-
-## Module map
-
-Already separated at a suitable scale:
-
-- `index.html`: waste-management guidance and page layout.
-- `app.js`: page interactions (a small script).
-- `style.css`: presentation.
-
-The lengthy HTML is primarily content. Keep content, behavior, and styles separate; add feature modules when the interactive code grows.
