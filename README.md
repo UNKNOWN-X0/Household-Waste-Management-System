@@ -3,11 +3,11 @@
 [![HTML5](https://img.shields.io/badge/HTML5-orange)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Live site](https://img.shields.io/badge/site-GitHub%20Pages-brightgreen)](https://unknown-x0.github.io/HouseholdWasteManagementSystem/)
+[![Live site](https://img.shields.io/badge/site-GitHub%20Pages-brightgreen)](https://unknown-x0.github.io/Household-Waste-Management-System/)
 
 A proposal presentation website adapting **Germany's 4-stream waste model** (Bioabfall · Papier · Wertstoff · Restmüll) to Thailand's infrastructure, saleng economy, and tropical climate.
 
-**[Open the live site](https://unknown-x0.github.io/HouseholdWasteManagementSystem/)**
+**[Open the live site](https://unknown-x0.github.io/Household-Waste-Management-System/)**
 
 ---
 
