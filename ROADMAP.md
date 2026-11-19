@@ -4,7 +4,7 @@ Open directions for the household waste-sorting proposal. Each item leaves this 
 
 ## Direction
 
-A clear, printable plan for sorting a Thai household's waste the German way, adapted to Thai collection, salengs, and climate. Keep it one static page, readable by the people who will actually sort, with figures a reader can check.
+A clear, printable guide for every Thai family to sort household waste the German way, adapted to Thai collection, salengs, and climate. It started as a presentation and is becoming a guide: in Thai, readable by the people who will actually sort, with figures a reader can check.
 
 ## Now
 
@@ -12,7 +12,7 @@ A clear, printable plan for sorting a Thai household's waste the German way, ada
 
 ## Later
 
-**A Thai version** (stated 2026-11-19, [#2](https://github.com/UNKNOWN-X0/Household-Waste-Management-System/issues/2)). The households the plan is for may not read English; waits on who the site is for.
+**A Thai version** (stated 2026-11-19, [#2](https://github.com/UNKNOWN-X0/Household-Waste-Management-System/issues/2)). The site grows from a presentation into a guide for every Thai family, so all of it should be available in Thai.
 
 ## Not planned
 
