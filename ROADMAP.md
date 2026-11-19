@@ -8,11 +8,7 @@ A clear, printable plan for sorting a Thai household's waste the German way, ada
 
 ## Now
 
-**Thai text marked as Thai** (stated 2026-11-19, [#3](https://github.com/UNKNOWN-X0/Household-Waste-Management-System/issues/3)). Thai labels and terms read with English rules in screen readers and may print with the wrong font. *Done when* all Thai text is inside `lang="th"` and a smoke check guards it.
-
-## Next
-
-**Dated, sourced figures** (stated 2026-11-19, [#1](https://github.com/UNKNOWN-X0/Household-Waste-Management-System/issues/1)). Prices, fines, and drop-off options have no date or source.
+**Dated, sourced figures** (stated 2026-11-19, [#1](https://github.com/UNKNOWN-X0/Household-Waste-Management-System/issues/1)). Prices, fines, and drop-off options have no date or source. *Done when* every price, fine, and drop-off claim has a date and a source or an "estimate" label.
 
 ## Later
 
