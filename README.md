@@ -5,25 +5,36 @@
 
 A proposal website adapting **Germany's 4-stream waste model** (Bioabfall · Papier · Wertstoff · Restmüll) to Thai households: their infrastructure, the saleng economy, and the tropical climate. It covers sorting guides, Bokashi composting, local recycling routes, a four-week rollout plan, and printable Thai labels.
 
-**[Open the live site →](https://unknown-x0.github.io/Household-Waste-Management-System/)**
+**[Open Household Waste Management System →](https://unknown-x0.github.io/Household-Waste-Management-System/)**
 
-## What's inside
+## Features
 
-| Tab | Content |
-| --- | --- |
-| **Overview** | Hero summary, Germany → Thailand stream mapping table |
-| **5 Streams** | Bin specs, Yes/No sorting lists, bag colours, bin sizes |
-| **Organic / Bokashi** | 4-step Bokashi guide, comparison vs compost pile vs worm farm |
-| **Outbound Flow** | Anti-mixing strategy, saleng / GEPP / WONGPANit routes |
-| **Rules & Penalties** | Violation fines, reward system, onboarding checklist |
-| **4-Week Roadmap** | Setup plan, weekly/monthly maintenance, pest control |
-| **Thai Labels** | Printable bilingual bin labels and bag tags |
+- **Overview:** a summary and the Germany → Thailand stream mapping table.
+- **5 Streams:** bin specs, yes/no sorting lists, bag colours, and bin sizes.
+- **Organic / Bokashi:** a four-step Bokashi guide, compared with a compost pile and a worm farm.
+- **Outbound Flow:** the anti-mixing strategy and the saleng, GEPP, and WONGPANit routes.
+- **Rules & Penalties:** violation fines, a reward system, and an onboarding checklist.
+- **4-Week Roadmap:** the setup plan, weekly and monthly maintenance, and pest control.
+- **Thai Labels:** printable bilingual bin labels and bag tags.
 
 ## Getting started
 
-Open the [live site](https://unknown-x0.github.io/Household-Waste-Management-System/), or open `index.html` in a browser. There is no build step. The onboarding checklist remembers its ticks in the browser's local storage.
+### Use it online
 
-## Thailand adaptations
+Open the [live site](https://unknown-x0.github.io/Household-Waste-Management-System/) and move between the tabs.
+
+### Run it yourself
+
+Open `index.html` in a browser; there is no build step.
+
+```sh
+git clone https://github.com/UNKNOWN-X0/Household-Waste-Management-System.git
+open Household-Waste-Management-System/index.html
+```
+
+## Usage
+
+### Thailand adaptations
 
 | German original | Thai adaptation |
 | --- | --- |
@@ -35,13 +46,23 @@ Open the [live site](https://unknown-x0.github.io/Household-Waste-Management-Sys
 
 > **Golden rule:** Only the blue residual bag ever goes into the municipal truck. All other streams have dedicated separate routes.
 
-## Design
+## Privacy
+
+The onboarding checklist remembers its ticks in the browser's local storage. Nothing else is stored, and the page sends nothing anywhere.
+
+## Development
+
+### Design
 
 | Element | Choice |
 | --- | --- |
 | Fonts | Sarabun (Thai + Latin) · IBM Plex Mono (labels) |
 | Primary | `#3B6D11` green · `#BA7517` amber |
 | Stream colours | Thailand national bin colour standard |
+
+## Tests
+
+No automated tests yet.
 
 ## Project structure
 
@@ -52,5 +73,3 @@ app.js       Tab navigation, animations, checklist persistence (a small script)
 ```
 
 Keep content, behaviour, and styles separate; add script modules only when the interactive code grows.
-
-_Thailand 2025 · Inspired by Germany's Kreislaufwirtschaft_
