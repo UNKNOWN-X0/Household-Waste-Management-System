@@ -76,3 +76,9 @@ assets/preview.png  Screenshot for this README
 ```
 
 Keep content, behaviour, and styles separate; add script modules only when the interactive code grows.
+
+## Project documents
+
+| File | What it covers |
+| --- | --- |
+| [ROADMAP.md](ROADMAP.md) | What is planned next, with an issue per item |
