@@ -12,21 +12,33 @@
     "semantic_hash": "8a60bd850d34b492cd1406c34e7e333a"
   },
   "README.md": {
-    "mtime": 1792793900.3757188,
-    "seen": 1792798615.783094,
-    "ast_hash": "fe057f05377ac1e9bdb83f9472462d6a",
-    "semantic_hash": "fe057f05377ac1e9bdb83f9472462d6a"
+    "mtime": 1795052298.3720503,
+    "seen": 1795076490.2109592,
+    "ast_hash": "e98f72a4dc79cd5cfda1e1a77b58fc1f",
+    "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1792756192.5679624,
-    "seen": 1792798615.7830951,
-    "ast_hash": "3682eb93494c7ebd232082c7e5bae115",
-    "semantic_hash": "3682eb93494c7ebd232082c7e5bae115"
+    "mtime": 1795053293.73571,
+    "seen": 1795076490.2109618,
+    "ast_hash": "5ea0558272b548e680fc16ba831fde80",
+    "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1792882904.983158,
-    "seen": 1792882907.8485398,
-    "ast_hash": "f3167e2e5d85323cbb51d893a9c337af",
+    "mtime": 1793023758.0553215,
+    "seen": 1795076490.210957,
+    "ast_hash": "d674ec0f5945de59d1d6d5f154027cf4",
+    "semantic_hash": ""
+  },
+  "ROADMAP.md": {
+    "mtime": 1795076421.118241,
+    "seen": 1795076490.2109609,
+    "ast_hash": "c07bdf285fc8e319a1feac91fbfe18ab",
+    "semantic_hash": ""
+  },
+  "assets/preview.png": {
+    "mtime": 1795051214.466814,
+    "seen": 1795076490.210963,
+    "ast_hash": "6d7eb8018e2cc563f1eaeebefccb61e4",
     "semantic_hash": ""
   }
 }

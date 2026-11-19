@@ -1,44 +1,42 @@
-# Graph Report - HouseholdWasteManagementSystem  (2026-10-25)
+# Graph Report - Household-Waste-Management-System  (2026-11-19)
 
 ## Corpus Check
-- 5 recognized files · ~3,964 words
-- 3 files lack native extraction: `.gitignore`, `.graphifyignore`, and `style.css`. The stylesheet is represented by a source-backed file node, but its CSS rules are not parsed.
+- cluster-only mode — file stats not available
 
 ## Summary
-- 48 nodes · 54 edges · 8 communities (5 shown, 3 thin omitted)
-- Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.95)
+- 54 nodes · 59 edges · 12 communities (8 shown, 4 thin omitted)
+- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.95)
 - Token cost: 0 input · 0 output
 
-## Refresh Notes
-- `refresh_project_links.py` verifies three README/HTML feature correspondences and source-backed links for the page script, stylesheet, browser storage, Google Fonts, and live GitHub Pages URL. The three section-to-summary links remain marked as inferred.
-- The graph has 54 links; Graphify HTML renders 54 edges with no duplicate endpoint pairs or dangling nodes.
-- The ≤1-connection warning includes intentional boundary endpoints, the file-level `observeRevealTargets()` helper, and project guidance concepts; no speculative edges were added.
-
 ## Graph Freshness
-- Built from commit: `ac922052`
+- Built from commit: `1400b208`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Household Rules and Rollout
-- Site Content and Assets
+- Five-stream household sorting plan
 - GitHub Actions Triggers
 - Jekyll Build Steps
 - Project Instructions
 - Archify Diagram Guidance
 - Graphify Index Guidance
 - Client Interactions and Browser Storage
+- Roadmap
+- Home waste management presentation page
+- Adapt German waste streams to Thai infrastructure and climate
+- Four-week implementation roadmap and maintenance schedule
 
 ## God Nodes (most connected - your core abstractions)
 1. `Home waste management presentation page` - 11 edges
 2. `Household Waste Management System README` - 7 edges
-3. `Five-stream household sorting plan` - 5 edges
-4. `steps` - 4 edges
-5. `Project instructions` - 4 edges
-6. `updateProgress()` - 3 edges
-7. `build` - 3 edges
-8. `Household compliance checklist, fines, and rewards` - 3 edges
-9. `Adapt German waste streams to Thai infrastructure and climate` - 3 edges
+3. `Roadmap` - 5 edges
+4. `Five-stream household sorting plan` - 5 edges
+5. `steps` - 4 edges
+6. `Project instructions` - 4 edges
+7. `updateProgress()` - 3 edges
+8. `build` - 3 edges
+9. `Household compliance checklist, fines, and rewards` - 3 edges
 10. `Separate outbound routes for recyclables, organics, residual, and hazardous waste` - 3 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -48,23 +46,23 @@
   index.html → app.js
 - `Household Waste Management System README` --references--> `updateProgress()`  [EXTRACTED]
   README.md → app.js
+- `Home waste management presentation page` --loads--> `Local stylesheet (style.css)`  [EXTRACTED]
+  index.html → style.css
 - `Household compliance checklist, fines, and rewards` --implements--> `Household sorting penalties and rewards`  [INFERRED]
-  index.html → README.md
-- `Four-week implementation roadmap and maintenance schedule` --implements--> `Four-week household rollout and maintenance plan`  [INFERRED]
   index.html → README.md
 
 ## Import Cycles
 - None detected.
 
-## Communities (8 total, 3 thin omitted)
+## Communities (12 total, 4 thin omitted)
 
 ### Community 0 - "Household Rules and Rollout"
-Cohesion: 0.25
-Nodes (9): updateProgress(), GitHub Pages live site, Household compliance checklist, fines, and rewards, Four-week implementation roadmap and maintenance schedule, Printable Thai bin labels and collection-day bag tags, Printable bilingual Thai waste labels and bag tags, Four-week household rollout and maintenance plan, Household sorting penalties and rewards (+1 more)
+Cohesion: 0.50
+Nodes (5): updateProgress(), GitHub Pages live site, Household compliance checklist, fines, and rewards, Household sorting penalties and rewards, Household Waste Management System README
 
-### Community 1 - "Site Content and Assets"
-Cohesion: 0.23
-Nodes (10): Google Fonts, Bokashi composting guide and comparison with alternatives, Five color-coded waste streams and accepted items, German-to-Thai waste stream mapping, Home waste management presentation page, Bokashi processing for household organic waste, Five-stream household sorting plan, Saleng and recycling-service outbound routes (+2 more)
+### Community 1 - "Five-stream household sorting plan"
+Cohesion: 0.50
+Nodes (3): Five color-coded waste streams and accepted items, Five-stream household sorting plan, Saleng and recycling-service outbound routes
 
 ### Community 2 - "GitHub Actions Triggers"
 Cohesion: 0.25
@@ -78,17 +76,31 @@ Nodes (6): runs-on, steps, build, name, run, uses
 Cohesion: 0.40
 Nodes (4): Project AGENTS Standard, Project data, Project instructions, Workspace Add-on Inventory
 
+### Community 8 - "Roadmap"
+Cohesion: 0.33
+Nodes (5): Direction, Later, Not planned, Now, Roadmap
+
+### Community 9 - "Home waste management presentation page"
+Cohesion: 0.40
+Nodes (5): Google Fonts, Home waste management presentation page, Printable Thai bin labels and collection-day bag tags, Printable bilingual Thai waste labels and bag tags, Local stylesheet (style.css)
+
+### Community 10 - "Adapt German waste streams to Thai infrastructure and climate"
+Cohesion: 0.50
+Nodes (4): Bokashi composting guide and comparison with alternatives, German-to-Thai waste stream mapping, Bokashi processing for household organic waste, Adapt German waste streams to Thai infrastructure and climate
+
 ## Knowledge Gaps
-- **10 low-degree node(s):** `Browser localStorage checklist state`, `GitHub Pages live site`, `Google Fonts`, `Project AGENTS Standard`, `Workspace Add-on Inventory` (+5 more)
-  These have ≤1 connection. This includes intentional external-service and browser-state endpoints, so the count alone does not imply missing relationships. (20 nodes total have ≤1 connection when file, concept, and rationale nodes are included.)
-- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore them.
+- **10 isolated node(s):** `GitHub Pages live site`, `Browser localStorage checklist state`, `Local stylesheet (style.css)`, `Google Fonts`, `Project AGENTS Standard` (+5 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 25 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
-_Questions this graph can help answer:_
+_Questions this graph is uniquely positioned to answer:_
 
-- **How does the page load its client behavior and stylesheet?**
-  Follow the source-backed page links to `app.js` and `style.css`.
-- **Where does checklist state persist?**
-  `app.js` reads and writes the browser's `localStorage`.
-- **Which household guidance appears both in the site and the README?**
-  Follow the three explicitly marked inferred feature-summary links and compare their cited sections.
+- **Why does `Home waste management presentation page` connect `Home waste management presentation page` to `Household Rules and Rollout`, `Five-stream household sorting plan`, `Client Interactions and Browser Storage`, `Adapt German waste streams to Thai infrastructure and climate`, `Four-week implementation roadmap and maintenance schedule`?**
+  _High betweenness centrality (0.108) - this node is a cross-community bridge._
+- **What connects `GitHub Pages live site`, `Browser localStorage checklist state`, `Local stylesheet (style.css)` to the rest of the system?**
+  _10 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `Household Waste Management System README` connect `Household Rules and Rollout` to `Home waste management presentation page`, `Four-week implementation roadmap and maintenance schedule`, `Five-stream household sorting plan`, `Client Interactions and Browser Storage`?**
+  _High betweenness centrality (0.052) - this node is a cross-community bridge._
+- **Why does `build` connect `Jekyll Build Steps` to `GitHub Actions Triggers`?**
+  _High betweenness centrality (0.032) - this node is a cross-community bridge._

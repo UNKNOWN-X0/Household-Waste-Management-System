@@ -1,0 +1,44 @@
+{
+  ".github/workflows/jekyll-docker.yml": {
+    "mtime": 1792756192.3767002,
+    "seen": 1792798615.7830882,
+    "ast_hash": "29fe146da84567bcc68665ce404ff135",
+    "semantic_hash": "29fe146da84567bcc68665ce404ff135"
+  },
+  "app.js": {
+    "mtime": 1792756192.4697511,
+    "seen": 1792798615.783092,
+    "ast_hash": "8a60bd850d34b492cd1406c34e7e333a",
+    "semantic_hash": "8a60bd850d34b492cd1406c34e7e333a"
+  },
+  "README.md": {
+    "mtime": 1795052298.3720503,
+    "seen": 1795076490.2109592,
+    "ast_hash": "e98f72a4dc79cd5cfda1e1a77b58fc1f",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1795053293.73571,
+    "seen": 1795076490.2109618,
+    "ast_hash": "5ea0558272b548e680fc16ba831fde80",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1793023758.0553215,
+    "seen": 1795076490.210957,
+    "ast_hash": "d674ec0f5945de59d1d6d5f154027cf4",
+    "semantic_hash": ""
+  },
+  "ROADMAP.md": {
+    "mtime": 1795076421.118241,
+    "seen": 1795076490.2109609,
+    "ast_hash": "c07bdf285fc8e319a1feac91fbfe18ab",
+    "semantic_hash": ""
+  },
+  "assets/preview.png": {
+    "mtime": 1795051214.466814,
+    "seen": 1795076490.210963,
+    "ast_hash": "6d7eb8018e2cc563f1eaeebefccb61e4",
+    "semantic_hash": ""
+  }
+}
