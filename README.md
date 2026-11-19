@@ -7,6 +7,8 @@ A proposal website adapting **Germany's 4-stream waste model** (Bioabfall · Pap
 
 **[Open Household Waste Management System →](https://unknown-x0.github.io/Household-Waste-Management-System/)**
 
+![Household Waste Management System — Thailand](assets/preview.png)
+
 ## Features
 
 - **Overview:** a summary and the Germany → Thailand stream mapping table.
@@ -67,9 +69,10 @@ No automated tests yet.
 ## Project structure
 
 ```text
-index.html   Content and structure (the page is mostly content)
-style.css    Design system and responsive layout
-app.js       Tab navigation, animations, checklist persistence (a small script)
+index.html          Content and structure (the page is mostly content)
+style.css           Design system and responsive layout
+app.js              Tab navigation, animations, checklist persistence (a small script)
+assets/preview.png  Screenshot for this README
 ```
 
 Keep content, behaviour, and styles separate; add script modules only when the interactive code grows.
