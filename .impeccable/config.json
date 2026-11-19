@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "graphify-out/graph.html"
+        ],
+        "createdAt": "2026-11-19T08:25:30.138Z",
+        "reason": "Claude: generated Graphify viewer (graphify update), not product UI; rewritten on every refresh"
+      },
+      {
+        "rule": "tiny-text",
+        "value": "*",
+        "files": [
+          "graphify-out/graph.html"
+        ],
+        "createdAt": "2026-11-19T08:25:30.156Z",
+        "reason": "Claude: generated Graphify viewer (graphify update), not product UI; rewritten on every refresh"
+      }
+    ]
+  }
+}
